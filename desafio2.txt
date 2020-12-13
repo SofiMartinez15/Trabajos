@@ -1,0 +1,27 @@
+int cant = 10;
+void setup() {
+  size(600, 600);
+}
+void draw() {
+  background(0);
+  for (int i=0; i<cant; i++) {
+
+    float tam = map(i, 0, cant-1, width, 20);  // tamaño
+
+    float verde = map(i, 0, cant-1, 255, 0);  // color degradé
+    float gris = map(i, 0, cant-1, 0, 255);  
+
+    float posX1 = map(i, 0, cant-1, width/2, width/2); // ubicación en X1
+    float posX2 = map(i, 0, cant-1, width, width/2+10); // ubicación en X2
+    float posX3 = map(i, 0, cant-1, 0, width/2-10); // ubicación en X3
+    float posX4 = map(i, 0, cant-1, width/2, width/2); // ubicación en X4
+
+    strokeWeight(2);
+    stroke(gris);
+    fill(0, verde, 0);
+    rect(posX1, height/2, -tam/2, -tam/2);
+    rect(posX2, height/2, -tam/2, -tam/2);
+    rect(posX3, height/2, tam/2, tam/2);
+    rect(posX4, height/2, tam/2, tam/2);
+  }
+}
